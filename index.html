@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>:: The Mangosteen Files :: Bangkok &amp; Beyond :: March 2026 ::</title>
+<title>:: A Gentlemen's Visitation to Thailand :: Bangkok &amp; Beyond :: March 2026 ::</title>
 <style>
 /* ============================================
    THE MANGOSTEEN FILES - EST. 2026
@@ -142,6 +142,9 @@ marquee { display: block; }
   width: 160px;
   vertical-align: top;
   padding: 0 8px 0 0;
+  position: sticky;
+  top: 185px;
+  align-self: flex-start;
 }
 
 .nav-box {
@@ -546,90 +549,69 @@ marquee { display: block; }
   color: #ffff00;
   text-shadow: 0 0 6px #ffff00;
 }
-</style>
-</head>
-<body>
 
-<!-- MARQUEE BANNER -->
-<div class="marquee-bar">
-  <marquee behavior="scroll" direction="left" scrollamount="4">
-    &#9992;&#65039; Welcome to my Thailand Travel Gallery &#9992;&#65039; &nbsp;&nbsp;&nbsp; ~ Updated March 2026 ~ &nbsp;&nbsp;&nbsp; &#127866; Click the photos to view full size &#127866; &nbsp;&nbsp;&nbsp; *** Bangkok *** Phuket *** Phi Phi Islands *** SO AMAZING &nbsp;&nbsp;&nbsp; &#11088; 355 Photos &#11088; &nbsp;&nbsp;&nbsp; &#127866; Click the photos to view full size &#127866;  &#9992;&#65039; Welcome to my Thailand Travel Gallery &#9992;&#65039;
-  </marquee>
-</div>
+/* === STICKY HEADER WRAPPER === */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
 
-
-<!-- RADIO PLAYER -->
-<div class="radio-bar">
-  <span class="radio-icon">&#127908;</span>
-  <span class="radio-label">RADIO</span>
-  <div class="radio-controls">
-    <button class="radio-btn" onclick="radioPrev()" title="Previous">&#9664;&#9664;</button>
-    <button class="radio-btn radio-play-btn" id="radio-play-btn" onclick="radioToggle()" title="Play/Pause">&#9654; PLAY</button>
-    <button class="radio-btn" onclick="radioNext()" title="Next">&#9654;&#9654;</button>
-  </div>
-  <div class="radio-track-wrap">
-    <div class="radio-track" id="radio-track">&#9835; Select play to begin &nbsp;&nbsp;&nbsp;</div>
-  </div>
-  <audio id="radio-audio" preload="none"></audio>
-</div>
-
-<style>
-.radio-bar {
-  background: linear-gradient(90deg, rgba(14,26,24, 0.22), rgba(18,38,32, 0.22), rgba(14,26,24, 0.22));
+/* === LANCE BARBADOS RADIO === */
+.radio-station {
+  background: linear-gradient(180deg, rgba(10,22,20, 0.28) 0%, rgba(8,16,14, 0.30) 100%);
   border-top: 2px solid #7DBDB5;
-  border-bottom: 2px solid #C87050;
-  padding: 5px 12px;
+  border-bottom: 3px solid #C87050;
+  padding: 10px 20px 12px 20px;
+  text-align: center;
+}
+.radio-station-name {
+  font-family: Impact, Arial Black, Oswald, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #C87050, #D4A860, #7DBDB5, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px #C87050);
+  margin-bottom: 6px;
+}
+.radio-controls-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  overflow: hidden;
-}
-.radio-icon {
-  font-size: 18px;
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 6px #7DBDB5);
-}
-.radio-label {
-  font-family: Impact, Arial Black, sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  color: #9ECEC5;
-  text-shadow: 0 0 8px #7DBDB5, 0 0 16px #00AAAA;
-  letter-spacing: 3px;
-  flex-shrink: 0;
-}
-.radio-controls {
-  display: flex;
-  gap: 4px;
-  flex-shrink: 0;
+  margin-bottom: 8px;
 }
 .radio-btn {
-  background: linear-gradient(180deg, #003344 0%, #101A18 100%);
+  background: linear-gradient(180deg, rgba(0,50,44, 0.30) 0%, rgba(0,26,22, 0.32) 100%);
   border-top: 2px solid #2A5550;
   border-left: 2px solid #2A5550;
   border-bottom: 2px solid #000810;
   border-right: 2px solid #000810;
   color: #9ECEC5;
   font-family: Arial Black, Impact, sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 900;
-  padding: 4px 10px;
+  padding: 6px 16px;
   cursor: pointer;
   letter-spacing: 0.5px;
-  box-shadow: 0 0 4px rgba(0,220,200, 0.14);
-  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(0,220,200, 0.14);
 }
 .radio-btn:hover {
-  background: linear-gradient(180deg, #004455 0%, #122420 100%);
+  background: linear-gradient(180deg, rgba(0,70,60, 0.36) 0%, rgba(0,40,34, 0.38) 100%);
   color: #D4A860;
   text-shadow: 0 0 6px #D4A860;
   box-shadow: 0 0 10px rgba(0,220,200, 0.27);
 }
 .radio-play-btn {
-  background: linear-gradient(180deg, rgba(0,58,48, 0.27) 0%, rgba(0,32,24, 0.29) 100%);
+  background: linear-gradient(180deg, rgba(0,70,58, 0.32) 0%, rgba(0,40,32, 0.34) 100%);
   border-color: #6AADA5;
   color: #9ECEC5;
-  padding: 4px 14px;
+  font-size: 14px;
+  padding: 7px 24px;
 }
 .radio-play-btn.playing {
   background: linear-gradient(180deg, #C87050 0%, #9A4E30 100%);
@@ -639,30 +621,76 @@ marquee { display: block; }
   border-right-color: #882200;
   color: #fff;
   text-shadow: 0 0 6px #FF4400;
-  box-shadow: 0 0 10px rgba(255,100,50, 0.27);
+  box-shadow: 0 0 12px rgba(255,100,50, 0.32);
 }
-.radio-track-wrap {
-  flex: 1;
-  overflow: hidden;
-  background: rgba(10,18,16, 0.2);
-  border: 1px solid #2A5550;
-  padding: 3px 8px;
-  box-shadow: inset 0 0 8px rgba(0,0,20, 0.36);
-}
-.radio-track {
+.radio-track-display {
   font-family: "Courier New", monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: #9ECEC5;
   text-shadow: 0 0 6px #7DBDB5;
-  white-space: nowrap;
-  animation: trackScroll 18s linear infinite;
-  display: inline-block;
+  margin-bottom: 6px;
+  min-height: 18px;
 }
-@keyframes trackScroll {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+.radio-seek-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.radio-seek-row input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(90deg, #C87050, #7DBDB5);
+  border-radius: 0;
+  outline: none;
+  border: 1px solid #2A5550;
+  box-shadow: 0 0 6px rgba(0,200,200, 0.23);
+  cursor: pointer;
+}
+.radio-seek-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #D4A860;
+  border: 2px solid #7DBDB5;
+  box-shadow: 0 0 6px #D4A860;
+  cursor: pointer;
+}
+.radio-seek-row input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #D4A860;
+  border: 2px solid #7DBDB5;
+  box-shadow: 0 0 6px #D4A860;
+  cursor: pointer;
+}
+#radio-elapsed {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  color: #7DBDB5;
+  text-shadow: 0 0 4px #7DBDB5;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 </style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header">
+
+<!-- MARQUEE BANNER -->
+<div class="marquee-bar">
+  <marquee behavior="scroll" direction="left" scrollamount="4">
+    &#9992;&#65039; Welcome to my Thailand Travel Gallery &#9992;&#65039; &nbsp;&nbsp;&nbsp; ~ Updated March 2026 ~ &nbsp;&nbsp;&nbsp; &#127866; Click the photos to view full size &#127866; &nbsp;&nbsp;&nbsp; *** Bangkok *** Phuket *** Phi Phi Islands *** SO AMAZING &nbsp;&nbsp;&nbsp; &#11088; 355 Photos &#11088; &nbsp;&nbsp;&nbsp; &#127866; Click the photos to view full size &#127866;  &#9992;&#65039; Welcome to my Thailand Travel Gallery &#9992;&#65039;
+  </marquee>
+</div>
+
+
 
 <script>
 var radioPlaylist = [
@@ -688,10 +716,26 @@ var radioPlaylist = [
 var radioIndex = 0;
 var radioPlaying = false;
 var radioAudio = null;
+var seekDragging = false;
 
 function radioInit() {
   radioAudio = document.getElementById('radio-audio');
   radioAudio.addEventListener('ended', radioNext);
+  radioAudio.addEventListener('timeupdate', function() {
+    if (!seekDragging && radioAudio.duration) {
+      var pct = (radioAudio.currentTime / radioAudio.duration) * 100;
+      var seek = document.getElementById('radio-seek');
+      if (seek) seek.value = pct;
+      var elapsed = document.getElementById('radio-elapsed');
+      if (elapsed) elapsed.textContent = fmtTime(radioAudio.currentTime) + ' / ' + fmtTime(radioAudio.duration);
+    }
+  });
+}
+
+function fmtTime(s) {
+  var m = Math.floor(s / 60);
+  var sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
 }
 
 function radioLoad(idx) {
@@ -699,7 +743,11 @@ function radioLoad(idx) {
   var track = radioPlaylist[radioIndex];
   radioAudio.src = track.file;
   var titleEl = document.getElementById('radio-track');
-  titleEl.textContent = '♫ ' + track.title + '   ';
+  if (titleEl) titleEl.textContent = '♫ ' + track.title;
+  var seek = document.getElementById('radio-seek');
+  if (seek) seek.value = 0;
+  var elapsed = document.getElementById('radio-elapsed');
+  if (elapsed) elapsed.textContent = '0:00 / 0:00';
 }
 
 function radioToggle() {
@@ -711,12 +759,12 @@ function radioToggle() {
   if (radioPlaying) {
     radioAudio.pause();
     radioPlaying = false;
-    btn.textContent = '▶ PLAY';
+    btn.innerHTML = '&#9654; PLAY';
     btn.classList.remove('playing');
   } else {
     radioAudio.play();
     radioPlaying = true;
-    btn.textContent = '⏸ PAUSE';
+    btn.innerHTML = '&#9646;&#9646; PAUSE';
     btn.classList.add('playing');
   }
 }
@@ -733,7 +781,22 @@ function radioNext() {
   if (radioPlaying) radioAudio.play();
 }
 
-document.addEventListener('DOMContentLoaded', radioInit);
+document.addEventListener('DOMContentLoaded', function() {
+  radioInit();
+  var seek = document.getElementById('radio-seek');
+  if (seek) {
+    seek.addEventListener('mousedown', function() { seekDragging = true; });
+    seek.addEventListener('touchstart', function() { seekDragging = true; });
+    seek.addEventListener('input', function() {
+      if (radioAudio && radioAudio.duration) {
+        radioAudio.currentTime = (this.value / 100) * radioAudio.duration;
+      }
+    });
+    seek.addEventListener('change', function() { seekDragging = false; });
+    seek.addEventListener('mouseup', function() { seekDragging = false; });
+    seek.addEventListener('touchend', function() { seekDragging = false; });
+  }
+});
 </script>
 
 <!-- MAIN HEADER -->
@@ -744,9 +807,8 @@ document.addEventListener('DOMContentLoaded', radioInit);
         <span class="spin-star">&#10022;</span>
       </td>
       <td style="text-align:center; vertical-align:middle;">
-        <div class="site-title">:: The Mangosteen Files ::</div>
+        <div class="site-title">:: A Gentlemen's Visitation to Thailand ::</div>
         <div class="site-subtitle">Bangkok &bull; Phuket &bull; Phi Phi Islands</div>
-        <div style="font-family:Verdana,Arial,sans-serif; font-size:10px; color:#aaaaaa; font-style:italic; margin-top:4px; letter-spacing:0.5px;">*Mangosteen is a fruit banned in many Thai Hotels</div>
         <div class="header-meta">
           <span class="updated">&#9733; Last Updated: March 14, 2026 &#9733;</span>
           &nbsp;&nbsp;&bull;&nbsp;&nbsp;
@@ -762,7 +824,26 @@ document.addEventListener('DOMContentLoaded', radioInit);
       </td>
     </tr>
   </table>
+
+  <!-- LANCE BARBADOS RADIO -->
+  <div class="radio-station">
+    <div class="radio-station-name">&#127908; LANCE BARBADOS RADIO &#127908;</div>
+    <div class="radio-track-display" id="radio-track">&#9835; Select play to begin</div>
+    <div class="radio-controls-row">
+      <button class="radio-btn" onclick="radioPrev()" title="Previous">&#9664;&#9664; PREV</button>
+      <button class="radio-btn radio-play-btn" id="radio-play-btn" onclick="radioToggle()" title="Play/Pause">&#9654; PLAY</button>
+      <button class="radio-btn" onclick="radioNext()" title="Next">NEXT &#9654;&#9654;</button>
+    </div>
+    <div class="radio-seek-row">
+      <span id="radio-elapsed" style="font-family:'Courier New',monospace; font-size:10px; color:#7DBDB5;">0:00 / 0:00</span>
+      <input type="range" id="radio-seek" min="0" max="100" value="0" step="0.1"/>
+    </div>
+    <audio id="radio-audio" preload="none"></audio>
+  </div>
+
 </div>
+
+</div><!-- /sticky-header -->
 
 <!-- PAGE LAYOUT TABLE -->
 <table class="page-table" cellpadding="0" cellspacing="0">
@@ -3070,7 +3151,7 @@ document.addEventListener('DOMContentLoaded', radioInit);
   </div>
   <div class="footer-ie">
     &#9658; Best viewed in Internet Explorer 6.0 at 1024x768 resolution &#9668;<br/>
-    &copy; 2026 The Mangosteen Files Website &mdash; All photos taken by me on my Kodak camera
+    &copy; 2026 A Gentlemen's Visitation to Thailand &mdash; All photos taken by me on my Kodak camera
   </div>
 </div>
 
